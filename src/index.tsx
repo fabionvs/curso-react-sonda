@@ -8,13 +8,25 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />}/>
-    </Routes>
-  </BrowserRouter>,
+  <>
+    <Header />
+    <div className="container-fluid">
+      <div className="row">
+        <Navbar />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/teste" element={<App />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </div>
+  </>
+  ,
   document.getElementById('root')
 );
 
