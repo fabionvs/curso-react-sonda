@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import Cliente from './views/cliente/Cliente';
 
 ReactDOM.render(
   <>
@@ -20,7 +21,7 @@ ReactDOM.render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/teste" element={<App />} />
+            <Route path="/cliente/*" element={<Cliente />} />
           </Routes>
         </BrowserRouter>
       </div>
