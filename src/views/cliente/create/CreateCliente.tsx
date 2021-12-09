@@ -47,7 +47,7 @@ function CreateCliente() {
         let trataCpf = cpf.replaceAll("-", "").replaceAll(".", "");
         clienteService.create({ name, cpf, email, password, endereco }).then(
             () => {
-                navigate('cliente');
+                navigate('/cliente');
             },
             (error) => {
                 const resMessage =
