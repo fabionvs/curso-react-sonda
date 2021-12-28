@@ -1,40 +1,107 @@
 import authService from "../services/auth.service";
-import { useNavigate } from 'react-router-dom'; // import do hook
-
+import { Link } from "react-router-dom";
 function Header() {
     const logout = (e: any) => {
         authService.logout();
     }
     return (
-        <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">
-                DPU
-            </a>
-            <button
-                className="navbar-toggler position-absolute d-md-none collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#sidebarMenu"
-                aria-controls="sidebarMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span className="navbar-toggler-icon" />
-            </button>
-            <input
-                className="form-control form-control-dark w-100"
-                type="text"
-                placeholder="Search"
-                aria-label="Search"
-            />
-            <div className="navbar-nav">
-                <div className="nav-item text-nowrap">
-                    <a className="nav-link px-3" href="#" onClick={logout}>
-                        Logout
-                    </a>
+        <nav id="sidebar" className="sidebar js-sidebar">
+            <div className="sidebar-content js-simplebar">
+                <a className="sidebar-brand" href="index.html">
+                    <span className="align-middle">DPU - SISRH</span>
+                </a>
+                <ul className="sidebar-nav">
+                    <li className="sidebar-header">Menu</li>
+                    <li className="sidebar-item active">
+                        <Link className="sidebar-link" to="/cliente">
+                            <i className="align-middle" data-feather="sliders" />{" "}
+                            <span className="align-middle">Clientes</span>
+                        </Link>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="pages-profile.html">
+                            <i className="align-middle" data-feather="user" />{" "}
+                            <span className="align-middle">Profile</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="pages-sign-in.html">
+                            <i className="align-middle" data-feather="log-in" />{" "}
+                            <span className="align-middle">Sign In</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="pages-sign-up.html">
+                            <i className="align-middle" data-feather="user-plus" />{" "}
+                            <span className="align-middle">Sign Up</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="pages-blank.html">
+                            <i className="align-middle" data-feather="book" />{" "}
+                            <span className="align-middle">Blank</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-header">Tools &amp; Components</li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="ui-buttons.html">
+                            <i className="align-middle" data-feather="square" />{" "}
+                            <span className="align-middle">Buttons</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="ui-forms.html">
+                            <i className="align-middle" data-feather="check-square" />{" "}
+                            <span className="align-middle">Forms</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="ui-cards.html">
+                            <i className="align-middle" data-feather="grid" />{" "}
+                            <span className="align-middle">Cards</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="ui-typography.html">
+                            <i className="align-middle" data-feather="align-left" />{" "}
+                            <span className="align-middle">Typography</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="icons-feather.html">
+                            <i className="align-middle" data-feather="coffee" />{" "}
+                            <span className="align-middle">Icons</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-header">Plugins &amp; Addons</li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="charts-chartjs.html">
+                            <i className="align-middle" data-feather="bar-chart-2" />{" "}
+                            <span className="align-middle">Charts</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
+                        <a className="sidebar-link" href="maps-google.html">
+                            <i className="align-middle" data-feather="map" />{" "}
+                            <span className="align-middle">Maps</span>
+                        </a>
+                    </li>
+                </ul>
+                <div className="sidebar-cta">
+                    <div className="sidebar-cta-content">
+                        <strong className="d-inline-block mb-2">Upgrade to Pro</strong>
+                        <div className="mb-3 text-sm">
+                            Are you looking for more components? Check out our premium version.
+                        </div>
+                        <div className="d-grid">
+                            <a href="upgrade-to-pro.html" className="btn btn-primary">
+                                Upgrade to Pro
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
+        </nav>
     )
 }
 

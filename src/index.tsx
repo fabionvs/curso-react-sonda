@@ -16,18 +16,13 @@ import Login from './views/auth/login/Login';
 
 ReactDOM.render(
   <>
-    <Header />
-    <div className="container-fluid">
-      <div className="row">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/cliente/*" element={<Cliente />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cliente/*" element={<Cliente />} />
+      </Routes>
+    </BrowserRouter>
   </>
   ,
   document.getElementById('root')
