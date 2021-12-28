@@ -11,16 +11,18 @@ import {
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Cliente from './views/cliente/Cliente';
+import Login from './views/auth/login/Login';
+
 
 ReactDOM.render(
   <>
     <Header />
     <div className="container-fluid">
       <div className="row">
-        <Navbar />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/cliente/*" element={<Cliente />} />
           </Routes>
         </BrowserRouter>

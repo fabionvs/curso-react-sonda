@@ -13,3 +13,22 @@ const login = (username : string, password : string) => {
             return response.data;
         });
 };
+
+const logout = () => {
+    localStorage.removeItem("user");
+};
+
+const getToken = () => {
+    let user = localStorage.getItem("user");
+    if(typeof user === 'string'){
+        return JSON.parse(user);
+    }
+    return null;
+};
+
+
+export default {
+    login,
+    logout,
+    getToken
+};
